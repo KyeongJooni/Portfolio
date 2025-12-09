@@ -1,9 +1,9 @@
 'use client';
 
+import { LoaderProvider } from '@/contexts/LoaderContext';
 import { css } from '@/styled-system/css';
 import { motion } from 'framer-motion';
-import { useState, useEffect, ReactNode } from 'react';
-import { LoaderProvider } from '@/contexts/LoaderContext';
+import { ReactNode, useEffect, useState } from 'react';
 
 interface PageLoaderProps {
   children?: ReactNode;
@@ -12,7 +12,9 @@ interface PageLoaderProps {
 const VISITED_KEY = 'portfolio_visited';
 
 export default function PageLoader({ children }: PageLoaderProps) {
-  const [phase, setPhase] = useState<'loading' | 'turning' | 'done' | 'skip'>('loading');
+  const [phase, setPhase] = useState<'loading' | 'turning' | 'done' | 'skip'>(
+    'loading',
+  );
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
@@ -38,9 +40,10 @@ export default function PageLoader({ children }: PageLoaderProps) {
       const animate = (timestamp: number) => {
         if (!start) start = timestamp;
         const progress = Math.min((timestamp - start) / duration, 1);
-        const eased = progress < 0.5
-          ? 2 * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        const eased =
+          progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
         setRotation(eased * -90);
 
@@ -92,7 +95,7 @@ export default function PageLoader({ children }: PageLoaderProps) {
   });
 
   const logoStyles = css({
-    fontSize: '4rem',
+    fontSize: '5rem',
     fontWeight: '700',
     background: 'linear-gradient(135deg, #5F8BFF, #A855F7)',
     backgroundClip: 'text',
@@ -104,11 +107,7 @@ export default function PageLoader({ children }: PageLoaderProps) {
 
   // 새로고침 시 스킵 또는 로더 완료
   if (phase === 'skip' || phase === 'done') {
-    return (
-      <LoaderProvider isLoaded={true}>
-        {children}
-      </LoaderProvider>
-    );
+    return <LoaderProvider isLoaded={true}>{children}</LoaderProvider>;
   }
 
   return (
@@ -150,7 +149,14 @@ export default function PageLoader({ children }: PageLoaderProps) {
       </div>
 
       {/* 미리 렌더링 (hydration) */}
-      <div style={{ visibility: 'hidden', position: 'fixed', inset: 0, zIndex: -1 }}>
+      <div
+        style={{
+          visibility: 'hidden',
+          position: 'fixed',
+          inset: 0,
+          zIndex: -1,
+        }}
+      >
         {children}
       </div>
     </LoaderProvider>
