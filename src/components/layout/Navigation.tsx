@@ -1,20 +1,21 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { navigation, hamburgerLine } from '@/styled-system/recipes';
+import { NAVIGATION_CONFIG, navItems } from '@/constants/navigation.constant';
+import { hamburgerLine, navigation } from '@/styled-system/recipes';
+import { navigationAnimations } from '@/styles/animations/navigation.animations';
 import {
   containerStyles,
-  logoStyles,
-  navLinksStyles,
-  linkStyles,
   hamburgerStyles,
-  mobileMenuStyles,
+  linkStyles,
+  logoStyles,
   mobileLinkStyles,
+  mobileMenuStyles,
+  navLinksStyles,
 } from '@/styles/styles/navigation.styles';
-import { navItems, NAVIGATION_CONFIG } from '@/constants/navigation.constant';
-import { navigationAnimations } from '@/styles/animations/navigation.animations';
+import { ThemeToggle } from '@ui/index';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,11 +43,12 @@ export default function Navigation() {
 
         {/* 데스크톱 네비게이션 */}
         <div className={navLinksStyles}>
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <Link key={item.label} href={item.href} className={linkStyles}>
               {item.label}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* 모바일 햄버거 메뉴 */}
@@ -54,9 +56,24 @@ export default function Navigation() {
           className={hamburgerStyles}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <div className={hamburgerLine({ open: isMobileMenuOpen, position: 'top' })} />
-          <div className={hamburgerLine({ open: isMobileMenuOpen, position: 'middle' })} />
-          <div className={hamburgerLine({ open: isMobileMenuOpen, position: 'bottom' })} />
+          <div
+            className={hamburgerLine({
+              open: isMobileMenuOpen,
+              position: 'top',
+            })}
+          />
+          <div
+            className={hamburgerLine({
+              open: isMobileMenuOpen,
+              position: 'middle',
+            })}
+          />
+          <div
+            className={hamburgerLine({
+              open: isMobileMenuOpen,
+              position: 'bottom',
+            })}
+          />
         </div>
       </div>
 

@@ -1,14 +1,13 @@
 'use client';
 
 import { css } from '@/styled-system/css';
+import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { useLoader } from '@/contexts/LoaderContext';
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true); // 다크모드 
+  const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
-  const { isLoaded } = useLoader();
 
   useEffect(() => {
     setMounted(true);
@@ -19,7 +18,6 @@ export default function ThemeToggle() {
       setIsDark(dark);
       document.documentElement.classList.toggle('light', !dark);
     } else {
-      // 다크 모드로 시작
       setIsDark(true);
       document.documentElement.classList.remove('light');
     }
@@ -33,32 +31,21 @@ export default function ThemeToggle() {
   };
 
   const buttonStyles = css({
-    position: 'fixed',
-    bottom: '2rem',
-    right: '2rem',
-    width: '56px',
-    height: '56px',
-    borderRadius: '50%',
-    backgroundColor: '{colors.background.tertiary}',
-    border: '1px solid {colors.border.primary}',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '36px',
+    height: '36px',
+    borderRadius: '50%',
+    backgroundColor: 'transparent',
+    border: 'none',
     cursor: 'pointer',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
     transition: 'all {durations.normal}',
-    zIndex: 1000,
-    _hover: {
-      transform: 'scale(1.1)',
-      boxShadow: '0 8px 20px rgba(59, 130, 246, 0.3)',
-      borderColor: '{colors.brand.blue}',
-    },
-  });
-
-  const textStyles = css({
-    fontSize: '{fontSizes.lg}',
-    fontWeight: '700',
     color: '{colors.text.primary}',
+    _hover: {
+      backgroundColor: '{colors.background.tertiary}',
+      color: '{colors.brand.blue}',
+    },
   });
 
   if (!mounted) return null;
@@ -67,20 +54,20 @@ export default function ThemeToggle() {
     <motion.button
       className={buttonStyles}
       onClick={toggleTheme}
-      whileTap={{ scale: 0.95 }}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={isLoaded ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-      transition={{ duration: 0.3, delay: 0.2 }}
+      whileTap={{ scale: 0.9 }}
       aria-label="Toggle theme"
     >
-      <motion.span
-        className={textStyles}
+      <motion.div
         initial={false}
         animate={{ rotate: isDark ? 0 : 360 }}
         transition={{ duration: 0.3 }}
       >
-        {isDark ? 'L' : 'D'}
-      </motion.span>
+        <Icon
+          icon={isDark ? 'ph:sun-fill' : 'ph:moon-fill'}
+          width={20}
+          height={20}
+        />
+      </motion.div>
     </motion.button>
   );
 }

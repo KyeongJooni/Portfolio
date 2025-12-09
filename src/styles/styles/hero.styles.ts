@@ -53,7 +53,12 @@ export const contentStyles = css({
 
 // Main title
 export const titleStyles = css({
-  fontSize: { base: '{fontSizes.3xl}', md: '{fontSizes.4xl}', lg: '{fontSizes.5xl}' },
+  fontSize: {
+    base: '{fontSizes.3xl}',
+    md: '{fontSizes.4xl}',
+    lg: '{fontSizes.5xl}',
+  },
+  fontWeight: '700',
   lineHeight: '1.3',
   marginBottom: '3rem',
 });
@@ -108,7 +113,8 @@ export const floatingElementStyles = css({
 export const firstFloatingStyles = css({
   width: '300px',
   height: '300px',
-  background: 'linear-gradient(135deg, {colors.brand.blue}, {colors.brand.purple})',
+  background:
+    'linear-gradient(135deg, {colors.brand.blue}, {colors.brand.purple})',
   top: '20%',
   left: '10%',
 });
@@ -117,9 +123,9 @@ export const firstFloatingStyles = css({
 export const secondFloatingStyles = css({
   width: '400px',
   height: '400px',
-  background: 'linear-gradient(135deg, {colors.brand.purple}, {colors.brand.blue})',
+  background:
+    'linear-gradient(135deg, {colors.brand.purple}, {colors.brand.blue})',
   bottom: '10%',
   right: '5%',
   animationDelay: '2s',
 });
-

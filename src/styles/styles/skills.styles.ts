@@ -21,6 +21,7 @@ export const skillCategoriesStyles = css({
   flexDirection: 'column',
   gap: '1.5rem',
   marginTop: '2rem',
+  minHeight: '280px',
 });
 
 export const categoryStyles = css({
@@ -98,7 +99,8 @@ export const levelTrackStyles = css({
 export const levelFillStyles = css({
   height: '100%',
   borderRadius: '9999px',
-  background: 'linear-gradient(90deg, {colors.brand.blue}, {colors.brand.purple})',
+  background:
+    'linear-gradient(90deg, {colors.brand.blue}, {colors.brand.purple})',
   transition: 'width {durations.normal} ease',
   width: 'var(--level-width, 0%)',
 });
@@ -110,4 +112,3 @@ export const tabsWrapperStyles = css({
   flexWrap: 'wrap',
   marginTop: '1.5rem',
 });
-

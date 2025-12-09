@@ -1,9 +1,9 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { useSmoothScroll } from '@hooks/index';
-import { PageLoader, ScrollProgress, ThemeToggle } from '@ui/index';
 import Navigation from '@layout/Navigation';
+import { PageLoader, ScrollProgress } from '@ui/index';
+import dynamic from 'next/dynamic';
 
 // Code splitting: Lazy load sections
 const Hero = dynamic(() => import('@sections/Hero'), {
@@ -53,7 +53,6 @@ export default function Home() {
       <Education />
       <Contact />
       <Footer />
-      <ThemeToggle />
     </PageLoader>
   );
 }
