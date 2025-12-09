@@ -12,7 +12,7 @@
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/개발기간-2024.12~진행중-7D57C1?style=for-the-badge&logo=github&logoColor=white" alt="개발기간"/>
+  <img src="https://img.shields.io/badge/개발기간-2025.09~진행중-7D57C1?style=for-the-badge&logo=github&logoColor=white" alt="개발기간"/>
 </p>
 
 </div>
