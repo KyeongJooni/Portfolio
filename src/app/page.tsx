@@ -1,0 +1,59 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+import { useSmoothScroll } from '@hooks/index';
+import { PageLoader, ScrollProgress, ThemeToggle } from '@ui/index';
+import Navigation from '@layout/Navigation';
+
+// Code splitting: Lazy load sections
+const Hero = dynamic(() => import('@sections/Hero'), {
+  loading: () => null,
+});
+
+const About = dynamic(() => import('@sections/About'), {
+  loading: () => null,
+});
+
+const Skills = dynamic(() => import('@sections/Skills'), {
+  loading: () => null,
+});
+
+const Experience = dynamic(() => import('@sections/Experience'), {
+  loading: () => null,
+});
+
+const Education = dynamic(() => import('@sections/Education'), {
+  loading: () => null,
+});
+
+const Projects = dynamic(() => import('@sections/Projects'), {
+  loading: () => null,
+});
+
+const Contact = dynamic(() => import('@sections/Contact'), {
+  loading: () => null,
+});
+
+const Footer = dynamic(() => import('@layout/Footer'), {
+  loading: () => null,
+});
+
+export default function Home() {
+  useSmoothScroll();
+
+  return (
+    <PageLoader>
+      <ScrollProgress />
+      <Navigation />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Experience />
+      <Education />
+      <Contact />
+      <Footer />
+      <ThemeToggle />
+    </PageLoader>
+  );
+}
