@@ -4,9 +4,18 @@ export const projects: Project[] = [
   {
     image: '/dtalks.png',
     title: 'DTalks',
-    description:
-      'RAG 기반 AI Chatbot을 활용한 사내문서 관리 시스템',
-    tags: ['React', 'TypeScript', 'Styled-Components', 'React Query', 'Zustand', 'React Hook Form', 'Yup', 'Vite', 'KakaoCloud'],
+    description: 'RAG 기반 AI Chatbot을 활용한 사내문서 관리 시스템',
+    tags: [
+      'React',
+      'TypeScript',
+      'Styled-Components',
+      'React Query',
+      'Zustand',
+      'React Hook Form',
+      'Yup',
+      'Vite',
+      'KakaoCloud',
+    ],
     links: {
       demo: 'https://youtu.be/FJiiPrAlXc8',
       github: 'https://github.com/DTaIks',
@@ -33,7 +42,6 @@ export const projects: Project[] = [
       '└ 버전 간 수정사항 비교 기능',
       '└ 부서별 미디어 파일(문서, 이미지, 음성) 업로드 및 관리',
       '└ FAQ 카테고리 및 문서 등록/편집/삭제 기능',
-
     ],
     contributions: [
       'React+TS 기반 프론트엔드 설계와 공통 UI(Button/Modal 등) 모듈화',
@@ -57,9 +65,19 @@ export const projects: Project[] = [
   {
     image: '/alog.jpg',
     title: 'Alog',
-    description:
-      'AI를 이용한 개발자 친화적 블로그 서비스 Alog',
-    tags: ['React', 'JavaScript', 'Figma', 'Framer Motion', 'React Quill', 'Zustand', 'WebSocket', 'SSE', 'Vite', 'Three.js'],
+    description: 'AI를 이용한 개발자 친화적 블로그 서비스 Alog',
+    tags: [
+      'React',
+      'JavaScript',
+      'Figma',
+      'Framer Motion',
+      'React Quill',
+      'Zustand',
+      'WebSocket',
+      'SSE',
+      'Vite',
+      'Three.js',
+    ],
     links: {
       demo: 'https://youtu.be/ZYel_wNa28c?si=P61EYzMuTr9aQ7Aq',
       github: 'https://github.com/Gachon-Univ-Creative-Code-Innovation',
@@ -78,7 +96,6 @@ export const projects: Project[] = [
       '채팅: 실시간 WebSocket 기반의 쪽지/채팅 기능 지원',
       '알림: 댓글/팔로우/쪽지 등 실시간 알림 실시간 수신 가능',
       '로드맵 추천: 유저의 기술 태그와 관심사 기반으로 커리어 로드맵 추천 기능 제공',
-
     ],
     contributions: [
       'React+JS 설계와 공통 UI 컴포넌트화, Three.js/R3F·Framer Motion 인터랙션 구현',
@@ -102,13 +119,19 @@ export const projects: Project[] = [
     title: 'Portfolio Website',
     description:
       '클린 아키텍처와 디자인 시스템 기반의 확장 가능한 포트폴리오 웹사이트입니다. Panda CSS의 제로 런타임 CSS-in-JS와 체계적인 컴포넌트 구조로 성능과 유지보수성을 극대화했습니다.',
-    tags: ['Next.js', 'TypeScript', 'Panda CSS', 'Framer Motion', 'Iconify React'],
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Panda CSS',
+      'Framer Motion',
+      'Iconify React',
+    ],
     links: {
       demo: '/',
       github: 'https://github.com/KyeongJooni/Portfolio',
     },
     teamSize: '1명',
-    period: '2024.12 - 진행중',
+    period: '2025.09 - 진행중',
     contributionRate: '100% (Solo)',
     detailedDescription:
       '성능과 확장성을 모두 고려한 현대적인 포트폴리오 웹사이트입니다. Panda CSS의 제로 런타임 특성으로 CSS-in-JS의 성능 문제를 해결하고, Recipe 시스템으로 컴포넌트 변형을 타입 안전하게 관리합니다. 스타일과 로직의 완전한 분리, 토큰 기반 디자인 시스템으로 일관성 있는 UI를 구축했습니다.',
@@ -139,4 +162,3 @@ export const projects: Project[] = [
     ],
   },
 ];
-
