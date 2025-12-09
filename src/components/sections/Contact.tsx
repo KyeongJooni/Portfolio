@@ -1,27 +1,31 @@
 'use client';
 
-import { cx } from '@/styled-system/css';
-import { motion } from 'framer-motion';
-import { Icon } from '@iconify/react';
-import { SectionTitle, Card, GradientText } from '@ui/index';
-import { useScrollAnimation } from '@/hooks';
 import { contactMethods } from '@/constants/contact.constant';
 import { CONTACT_COPY } from '@/constants/contact.copy';
-import { contactCardVariants, contactCtaVariants } from '@/styles/animations/contact.animations';
-import { contactIconMap } from '@/utils/contact-icons';
+import { useScrollAnimation } from '@/hooks';
+import { cx } from '@/styled-system/css';
 import {
-  sectionStyles,
-  containerStyles,
-  contactGridStyles,
+  contactCardVariants,
+  contactCtaVariants,
+} from '@/styles/animations/contact.animations';
+import {
+  cardWrapperStyles,
   contactCardStyles,
-  iconStyles,
-  labelStyles,
-  valueStyles,
-  linkStyles,
+  contactGridStyles,
+  containerStyles,
   ctaStyles,
   ctaTextStyles,
   gradientHeadingStyles,
+  iconStyles,
+  labelStyles,
+  linkStyles,
+  sectionStyles,
+  valueStyles,
 } from '@/styles/styles/contact.styles';
+import { contactIconMap } from '@/utils/contact-icons';
+import { Icon } from '@iconify/react';
+import { Card, GradientText, SectionTitle } from '@ui/index';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [ref, inView] = useScrollAnimation();
@@ -43,10 +47,11 @@ export default function Contact() {
           {contactMethods.map((method, index) => (
             <motion.div
               key={index}
+              className={cardWrapperStyles}
               variants={contactCardVariants}
               transition={{ delay: index * CONTACT_COPY.motion.delayStep }}
             >
-              <Card variant="default" hoverable>
+              <Card variant="default" hoverable className={cardWrapperStyles}>
                 <a
                   href={method.link}
                   target="_blank"

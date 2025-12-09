@@ -26,3 +26,8 @@ export const gridStyles = css({
   marginTop: '3rem',
 });
 
+// Card wrapper for equal height
+export const cardWrapperStyles = css({
+  height: '100%',
+});
+

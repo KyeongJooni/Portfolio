@@ -36,6 +36,7 @@ export const contactCardStyles = css({
   padding: '1.75rem',
   width: '100%',
   height: '100%',
+  minHeight: '150px',
 });
 
 export const iconStyles = css({
@@ -59,6 +60,12 @@ export const valueStyles = css({
 
 export const linkStyles = css({
   textDecoration: 'none',
+  display: 'block',
+  height: '100%',
+});
+
+export const cardWrapperStyles = css({
+  height: '100%',
 });
 
 export const ctaStyles = css({
@@ -77,4 +84,3 @@ export const gradientHeadingStyles = css({
   fontSize: '{fontSizes.4xl}',
   fontWeight: '700',
 });
-

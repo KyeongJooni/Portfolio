@@ -58,9 +58,10 @@ export const titleStyles = css({
     md: '{fontSizes.4xl}',
     lg: '{fontSizes.5xl}',
   },
-  fontWeight: '700',
+  fontWeight: '800',
   lineHeight: '1.3',
   marginBottom: '3rem',
+  wordBreak: 'keep-all',
 });
 
 // Introduction blocks container

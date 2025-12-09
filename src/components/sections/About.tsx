@@ -1,11 +1,18 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { SectionTitle, IconCard } from '@ui/index';
-import { useScrollAnimation } from '@/hooks';
-import { sectionStyles, gridStyles } from '@/styles/styles/about.styles';
 import { aboutCards } from '@/constants/about.constant';
-import { aboutCardVariants, aboutContainerVariants } from '@/styles/animations/about.animations';
+import { useScrollAnimation } from '@/hooks';
+import {
+  aboutCardVariants,
+  aboutContainerVariants,
+} from '@/styles/animations/about.animations';
+import {
+  cardWrapperStyles,
+  gridStyles,
+  sectionStyles,
+} from '@/styles/styles/about.styles';
+import { IconCard, SectionTitle } from '@ui/index';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const [ref, inView] = useScrollAnimation();
@@ -26,13 +33,18 @@ export default function About() {
           animate={inView ? 'visible' : 'hidden'}
         >
           {aboutCards.map((card, index) => (
-            <motion.div key={index} variants={aboutCardVariants}>
+            <motion.div
+              key={index}
+              className={cardWrapperStyles}
+              variants={aboutCardVariants}
+            >
               <IconCard
                 number={index + 1}
                 title={card.title}
                 description={card.description}
                 variant="default"
                 hoverable
+                className={cardWrapperStyles}
               />
             </motion.div>
           ))}

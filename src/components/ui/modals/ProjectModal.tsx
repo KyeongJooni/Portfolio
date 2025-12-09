@@ -1,26 +1,27 @@
 'use client';
 
+import { useBodyScrollLock, useEscapeKey } from '@/hooks';
 import { css } from '@/styled-system/css';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@ui/index';
-import { tagContainerStyles, tagStyles } from '@/styles/styles/projects.styles';
 import {
-  overlayStyles,
-  modalStyles,
   closeButtonStyles,
   contentStyles,
+  descriptionStyles,
   headerStyles,
-  titleStyles,
+  imageContainerStyles,
+  linkGroupStyles,
+  listItemStyles,
+  listStyles,
+  modalStyles,
+  nestedListItemStyles,
+  overlayStyles,
   sectionStyles,
   sectionTitleStyles,
-  descriptionStyles,
-  listStyles,
-  listItemStyles,
-  nestedListItemStyles,
-  linkGroupStyles,
-  imageContainerStyles,
+  titleStyles,
 } from '@/styles/styles/projectmodal.styles';
+import { tagContainerStyles, tagStyles } from '@/styles/styles/projects.styles';
 import { tagIconMap } from '@/utils/tag-icons';
+import { Button } from '@ui/index';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 
 interface Project {
@@ -46,7 +47,14 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
-export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+export default function ProjectModal({
+  project,
+  isOpen,
+  onClose,
+}: ProjectModalProps) {
+  useBodyScrollLock(isOpen);
+  useEscapeKey(onClose, isOpen);
+
   if (!project) return null;
 
   return (
@@ -65,7 +73,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             <button className={closeButtonStyles} onClick={onClose}>
               <span
@@ -97,7 +105,9 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     <span key={i} className={tagStyles}>
                       {(() => {
                         const Icon = tagIconMap[tag];
-                        return Icon ? <Icon.Icon size={16} color={Icon.color} title={tag} /> : null;
+                        return Icon ? (
+                          <Icon.Icon size={16} color={Icon.color} title={tag} />
+                        ) : null;
                       })()}
                       {tag}
                     </span>

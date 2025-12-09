@@ -7,6 +7,7 @@ interface IconCardProps {
   description: string;
   variant?: 'default' | 'glass' | 'bordered';
   hoverable?: boolean;
+  className?: string;
 }
 
 export default function IconCard({
@@ -15,6 +16,7 @@ export default function IconCard({
   description,
   variant = 'glass',
   hoverable = false,
+  className,
 }: IconCardProps) {
   const contentStyles = css({
     display: 'flex',
@@ -43,7 +45,7 @@ export default function IconCard({
   });
 
   return (
-    <Card variant={variant} hoverable={hoverable}>
+    <Card variant={variant} hoverable={hoverable} className={className}>
       <div className={contentStyles}>
         <span className={numberStyles}>{String(number).padStart(2, '0')}</span>
         <h3 className={titleStyles}>{title}</h3>
