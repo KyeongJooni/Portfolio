@@ -76,7 +76,7 @@ export default function ThemeToggle() {
       <motion.span
         className={textStyles}
         initial={false}
-        animate={{ rotate: isDark ? 0 : 180 }}
+        animate={{ rotate: isDark ? 0 : 360 }}
         transition={{ duration: 0.3 }}
       >
         {isDark ? 'L' : 'D'}

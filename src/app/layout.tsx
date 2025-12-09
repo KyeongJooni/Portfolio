@@ -2,32 +2,34 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Creative Frontend Developer',
+  title: 'KyeongJooni Portfolio',
   description:
-    '사용자 경험을 최우선으로 생각하며, 아름답고 인터랙티브한 웹을 만드는 프론트엔드 개발자의 포트폴리오입니다.',
+    '사용자 경험과 구조적 설계에 집중하는 개발자 이경준 포트폴리오',
   keywords: [
     'Frontend Developer',
+    'Frontend Engineer',
     'React',
     'Next.js',
     'TypeScript',
     'Portfolio',
     'Web Developer',
     '프론트엔드 개발자',
+    '이경준',
   ],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  authors: [{ name: 'KyeongJoon Lee' }],
+  creator: 'KyeongJoon Lee',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://yourwebsite.com',
-    title: 'Portfolio | Creative Frontend Developer',
-    description: '사용자 경험을 최우선으로 생각하는 프론트엔드 개발자',
-    siteName: 'Portfolio',
+    url: 'https://www.kyeongjooni.site/',
+    title: 'KyeongJooni Portfolio',
+    description: '사용자 경험과 구조적 설계에 집중하는 개발자 이경준 포트폴리오',
+    siteName: 'KyeongJooni Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio | Creative Frontend Developer',
-    description: '사용자 경험을 최우선으로 생각하는 프론트엔드 개발자',
+    title: 'KyeongJooni Portfolio',
+    description: '사용자 경험과 구조적 설계에 집중하는 개발자 이경준 포트폴리오',
   },
   robots: {
     index: true,
