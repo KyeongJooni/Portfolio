@@ -3,10 +3,12 @@
 import { css } from '@/styled-system/css';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useLoader } from '@/contexts/LoaderContext';
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false); // 기본을 라이트로 시작
+  const [isDark, setIsDark] = useState(true); // 다크모드 
   const [mounted, setMounted] = useState(false);
+  const { isLoaded } = useLoader();
 
   useEffect(() => {
     setMounted(true);
@@ -17,9 +19,9 @@ export default function ThemeToggle() {
       setIsDark(dark);
       document.documentElement.classList.toggle('light', !dark);
     } else {
-      // 저장된 값이 없으면 라이트 모드로 시작
-      setIsDark(false);
-      document.documentElement.classList.add('light');
+      // 다크 모드로 시작
+      setIsDark(true);
+      document.documentElement.classList.remove('light');
     }
   }, []);
 
@@ -53,8 +55,10 @@ export default function ThemeToggle() {
     },
   });
 
-  const iconStyles = css({
-    fontSize: '{fontSizes.2xl}',
+  const textStyles = css({
+    fontSize: '{fontSizes.lg}',
+    fontWeight: '700',
+    color: '{colors.text.primary}',
   });
 
   if (!mounted) return null;
@@ -65,17 +69,17 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       whileTap={{ scale: 0.95 }}
       initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.5 }}
+      animate={isLoaded ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+      transition={{ duration: 0.3, delay: 0.2 }}
       aria-label="Toggle theme"
     >
       <motion.span
-        className={iconStyles}
+        className={textStyles}
         initial={false}
         animate={{ rotate: isDark ? 0 : 180 }}
         transition={{ duration: 0.3 }}
       >
-        {isDark ? '☀️' : '🌙'}
+        {isDark ? 'L' : 'D'}
       </motion.span>
     </motion.button>
   );
