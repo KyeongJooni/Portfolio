@@ -22,7 +22,7 @@
 ## 🛠️ 기술 스택
 
 ### Core
-- **Next.js 14** - App Router, Server Components
+- **Next.js 15** - App Router, Server Components
 - **TypeScript** - 타입 안전성
 - **Panda CSS** - 제로 런타임 CSS-in-JS, Recipe 시스템
 
@@ -43,48 +43,19 @@
 ```
 src/
 ├── app/                        # Next.js App Router
-│   ├── layout.tsx              # 루트 레이아웃
-│   ├── page.tsx                # 메인 페이지
-│   └── globals.css             # 전역 스타일
 ├── components/
 │   ├── sections/               # 섹션 컴포넌트
-│   │   ├── Hero.tsx
-│   │   ├── Skills.tsx
-│   │   ├── Projects.tsx
-│   │   └── Contact.tsx
 │   ├── ui/                     # 공통 UI 컴포넌트
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   └── SectionTitle.tsx
-│   └── Navigation.tsx          # 네비게이션
+│   └── layout/                 # 레이아웃 컴포넌트
 ├── styles/
 │   ├── recipes/                # Panda CSS Recipe 정의
-│   │   ├── button.recipe.ts
-│   │   ├── card.recipe.ts
-│   │   ├── navigation.recipe.ts
-│   │   └── skill-tab.recipe.ts
 │   ├── styles/                 # 정적 스타일
-│   │   ├── hero.styles.ts
-│   │   ├── skills.styles.ts
-│   │   ├── projects.styles.ts
-│   │   └── contact.styles.ts
 │   └── animations/             # Framer Motion variants
-│       ├── hero.animations.ts
-│       ├── skills.animations.ts
-│       └── projects.animations.ts
 ├── constants/                  # 데이터 상수
-│   ├── projects.constant.ts
-│   ├── skills.constant.ts
-│   └── hero.constant.ts
 ├── contexts/                   # React Context
-│   └── LoaderContext.tsx
 ├── hooks/                      # 커스텀 Hook
-│   └── useSmoothScroll.ts
 ├── types/                      # TypeScript 타입
-│   ├── projects.ts
-│   └── skills.ts
 └── utils/                      # 유틸리티
-    └── skill-icons.ts
 ```
 
 <br>
