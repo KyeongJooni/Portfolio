@@ -24,16 +24,19 @@
 ## 🛠️ 기술 스택
 
 ### Core
+
 - **Next.js 15** - App Router, Server Components
 - **TypeScript** - 타입 안전성
 - **Panda CSS** - 제로 런타임 CSS-in-JS, Recipe 시스템
 
 ### Styling & Animation
+
 - **Panda CSS Recipe** - 타입 안전한 컴포넌트 variant 시스템
 - **Framer Motion** - 스크롤 애니메이션 & 인터랙션
 - **Iconify React** - 통합 아이콘 시스템
 
 ### Design System
+
 - **토큰 기반 디자인 시스템** - colors, spacing, typography
 - **Recipe 기반 컴포넌트** - Button, Card, Navigation, SkillTab
 - **CSS 변수** - 동적 스타일링
@@ -65,16 +68,19 @@ src/
 ## ✨ 주요 특징
 
 ### 아키텍처
+
 - **스타일/로직 완전 분리** - 유지보수성 극대화
 - **Recipe 시스템** - 타입 안전한 variant 관리
 - **토큰 기반 디자인 시스템** - 일관된 UI 구축
 
 ### 성능 최적화
+
 - **Panda CSS 제로 런타임** - CSS-in-JS 런타임 오버헤드 제거
 - **staticCss 설정** - 동적 variant CSS 사전 생성
 - **Dynamic Import** - 코드 스플리팅
 
 ### 개발 경험
+
 - **타입 안전성** - Recipe variant 자동 완성
 - **체계적인 구조** - recipes/, styles/, animations/ 분리
 - **재사용성** - 중앙화된 디자인 토큰 & 컴포넌트
