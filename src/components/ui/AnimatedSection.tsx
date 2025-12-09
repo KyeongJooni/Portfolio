@@ -1,8 +1,8 @@
 'use client';
 
 import { motion, type Variants } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { ReactNode } from 'react';
+import { useScrollAnimation } from '@/hooks';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -17,10 +17,7 @@ export default function AnimatedSection({
   delay = 0,
   direction = 'up',
 }: AnimatedSectionProps) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   const directionOffset = {
     up: { y: 50, x: 0 },

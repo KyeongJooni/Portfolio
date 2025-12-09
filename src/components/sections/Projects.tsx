@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
 import Image from 'next/image';
 import { cx } from '@/styled-system/css';
 import { SectionTitle, Card, Button, ProjectModal } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { Project } from '@/types/projects';
 import { projects } from '@/constants/projects.constant';
 import { projectsCardVariants } from '@/styles/animations/projects.animations';
@@ -28,10 +28,7 @@ import {
 } from '@/styles/styles/projects.styles';
 
 export default function Projects() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation({ threshold: 0.2 });
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

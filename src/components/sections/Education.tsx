@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { cx } from '@/styled-system/css';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { SectionTitle, Card } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { educations } from '@/constants/education.constant';
 import { EDUCATION_COPY } from '@/constants/education.copy';
 import { educationCardVariants } from '@/styles/animations/education.animations';
@@ -34,10 +34,7 @@ import {
 
 export default function Education() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   return (
     <section id="education" className={sectionStyles} ref={ref}>

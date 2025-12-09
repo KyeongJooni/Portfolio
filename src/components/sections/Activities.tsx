@@ -2,8 +2,8 @@
 
 import { cx } from '@/styled-system/css';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { SectionTitle } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { activities } from '@/constants/activities.constant';
 import {
   sectionStyles,
@@ -22,10 +22,7 @@ import {
 } from '@/styles/animations/activities.animations';
 
 export default function Activities() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   const sortedActivities = [...activities].sort((a, b) => {
     const pa = a.period ?? '';

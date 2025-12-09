@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { SectionTitle } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { experiences } from '@/constants/experience.constant';
 import {
   sectionStyles,
@@ -22,10 +22,7 @@ import {
 import { experienceItemVariants } from '@/styles/animations/experience.animations';
 
 export default function Experience() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   const itemVariants = experienceItemVariants;
 

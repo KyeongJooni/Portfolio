@@ -2,8 +2,8 @@
 
 import { cx } from '@/styled-system/css';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { SectionTitle } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { awards } from '@/constants/awards.constant';
 import { AWARDS_COPY } from '@/constants/awards.copy';
 import { awardsCardVariants } from '@/styles/animations/awards.animations';
@@ -21,10 +21,7 @@ import {
 } from '@/styles/styles/awards.styles';
 
 export default function Awards() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   return (
     <section id="awards" className={sectionStyles} ref={ref}>

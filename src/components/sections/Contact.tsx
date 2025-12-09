@@ -2,9 +2,9 @@
 
 import { cx } from '@/styled-system/css';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Icon } from '@iconify/react';
 import { SectionTitle, Card, GradientText } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { contactMethods } from '@/constants/contact.constant';
 import { CONTACT_COPY } from '@/constants/contact.copy';
 import { contactCardVariants, contactCtaVariants } from '@/styles/animations/contact.animations';
@@ -24,10 +24,7 @@ import {
 } from '@/styles/styles/contact.styles';
 
 export default function Contact() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   return (
     <section id="contact" className={sectionStyles} ref={ref}>

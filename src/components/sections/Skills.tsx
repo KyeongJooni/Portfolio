@@ -2,10 +2,10 @@
 
 import { cx } from '@/styled-system/css';
 import { skillTab } from '@/styled-system/recipes';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { SectionTitle } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { skillCategories } from '@/constants/skills.constant';
 import { SKILLS_COPY } from '@/constants/skills.copy';
 import {
@@ -29,10 +29,7 @@ import { Icon } from '@iconify/react';
 import { skillIconMap } from '@/utils/skill-icons';
 
 export default function Skills() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation({ threshold: 0.5 });
   const [activeCategory, setActiveCategory] =
     useState<(typeof SKILLS_COPY.categories)[number]>(SKILLS_COPY.categories[0]);
 
@@ -72,55 +69,62 @@ export default function Skills() {
             ))}
           </div>
 
-        <motion.div
-          className={skillCategoriesStyles}
-          variants={skillsContainerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          {skillCategories
-            .filter(category => category.title === activeCategory)
-            .map((category, index) => (
-            <motion.div key={index} variants={skillCategoryVariants} className={categoryStyles}>
-              <h3 className={categoryTitleStyles}>{category.title}</h3>
-              <div className={skillsGridStyles}>
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    className={skillCardStyles}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <span className={skillIconStyles}>
-                      {(() => {
-                        const entry = skillIconMap[skill.name];
-                        return entry ? (
-                          <Icon
-                            icon={entry.icon}
-                            width={22}
-                            height={22}
-                            color={entry.color}
+        <div className={skillCategoriesStyles}>
+          <AnimatePresence mode="wait">
+            {skillCategories
+              .filter(category => category.title === activeCategory)
+              .map((category) => (
+              <motion.div
+                key={category.title}
+                className={categoryStyles}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              >
+                <h3 className={categoryTitleStyles}>{category.title}</h3>
+                <div className={skillsGridStyles}>
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skillIndex}
+                      className={skillCardStyles}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.2 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <span className={skillIconStyles}>
+                        {(() => {
+                          const entry = skillIconMap[skill.name];
+                          return entry ? (
+                            <Icon
+                              icon={entry.icon}
+                              width={22}
+                              height={22}
+                              color={entry.color}
+                            />
+                          ) : (
+                            skill.icon ?? null
+                          );
+                        })()}
+                      </span>
+                      <p className={skillNameStyles}>{skill.name}</p>
+                      <div className={levelBarWrapperStyles}>
+                        <div className={skillLevelStyles}>{skill.level}</div>
+                        <div className={levelTrackStyles}>
+                          <div
+                            className={levelFillStyles}
+                            style={{ '--level-width': `${getLevelPercent(skill.level)}%` } as React.CSSProperties}
                           />
-                        ) : (
-                          skill.icon ?? null
-                        );
-                      })()}
-                    </span>
-                    <p className={skillNameStyles}>{skill.name}</p>
-                    <div className={levelBarWrapperStyles}>
-                      <div className={skillLevelStyles}>{skill.level}</div>
-                      <div className={levelTrackStyles}>
-                        <div
-                          className={levelFillStyles}
-                          style={{ '--level-width': `${getLevelPercent(skill.level)}%` } as React.CSSProperties}
-                        />
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

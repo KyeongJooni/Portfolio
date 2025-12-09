@@ -1,17 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { SectionTitle, IconCard } from '@ui/index';
+import { useScrollAnimation } from '@/hooks';
 import { sectionStyles, gridStyles } from '@/styles/styles/about.styles';
 import { aboutCards } from '@/constants/about.constant';
 import { aboutCardVariants, aboutContainerVariants } from '@/styles/animations/about.animations';
 
 export default function About() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useScrollAnimation();
 
   return (
     <section id="about" className={sectionStyles} ref={ref}>
