@@ -102,7 +102,7 @@ export const projects: Project[] = [
     title: 'Portfolio Website',
     description:
       '클린 아키텍처와 디자인 시스템 기반의 확장 가능한 포트폴리오 웹사이트입니다. Panda CSS의 제로 런타임 CSS-in-JS와 체계적인 컴포넌트 구조로 성능과 유지보수성을 극대화했습니다.',
-    tags: ['Next.js', 'Panda CSS', 'Framer Motion', 'TypeScript'],
+    tags: ['Next.js', 'TypeScript', 'Panda CSS', 'Framer Motion', 'Iconify React'],
     links: {
       demo: '#',
       github: 'https://github.com/KyeongJooni/Portfolio',
