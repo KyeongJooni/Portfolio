@@ -1,5 +1,6 @@
 'use client';
 
+import { useLoader } from '@/contexts/LoaderContext';
 import { css } from '@/styled-system/css';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
@@ -8,6 +9,7 @@ import { useEffect, useState } from 'react';
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const { isLoaded } = useLoader();
 
   useEffect(() => {
     setMounted(true);
@@ -48,7 +50,8 @@ export default function ThemeToggle() {
     },
   });
 
-  if (!mounted) return null;
+  // mounted와 isLoaded 둘 다 true일 때만 보이도록 (깜빡임 방지)
+  const isReady = mounted && isLoaded;
 
   return (
     <motion.button
@@ -56,6 +59,9 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       whileTap={{ scale: 0.9 }}
       aria-label="Toggle theme"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isReady ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
     >
       <motion.div
         initial={false}

@@ -6,7 +6,7 @@ interface UseScrollAnimationOptions {
 }
 
 export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
-  const { threshold = 0.5, triggerOnce = true } = options;
+  const { threshold = 0.4, triggerOnce = true } = options;
 
   return useInView({
     triggerOnce,
