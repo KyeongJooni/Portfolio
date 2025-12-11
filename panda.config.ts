@@ -278,6 +278,8 @@ export default defineConfig({
       overflow: 'auto',
       margin: 0,
       padding: 0,
+      wordBreak: 'keep-all',
+      overflowWrap: 'break-word',
     },
     '::selection': {
       backgroundColor: 'rgba(59, 130, 246, 0.3)',

@@ -66,7 +66,7 @@ export const hamburgerLineRecipe = defineRecipe({
       open: true,
       position: 'top',
       css: {
-        transform: 'rotate(45deg) translateY(6px)',
+        transform: 'translateY(6px) rotate(45deg)',
       },
     },
     {
@@ -80,7 +80,7 @@ export const hamburgerLineRecipe = defineRecipe({
       open: true,
       position: 'bottom',
       css: {
-        transform: 'rotate(-45deg) translateY(-6px)',
+        transform: 'translateY(-6px) rotate(-45deg)',
       },
     },
   ],

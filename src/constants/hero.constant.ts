@@ -1,6 +1,6 @@
 // Hero 섹션 텍스트 내용
 export const HERO_CONTENT = {
-  title: '안녕하세요. 프론트엔드 개발자 이경준입니다.',
+  title: '안녕하세요, 프론트엔드 개발자 이경준입니다.',
   introBlocks: [
     {
       heading: '사용자 경험을 중요하게 생각합니다.',

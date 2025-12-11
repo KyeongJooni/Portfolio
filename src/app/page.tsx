@@ -26,6 +26,10 @@ const Education = dynamic(() => import('@sections/Education'), {
   loading: () => null,
 });
 
+const Activities = dynamic(() => import('@sections/Activities'), {
+  loading: () => null,
+});
+
 const Projects = dynamic(() => import('@sections/Projects'), {
   loading: () => null,
 });
@@ -51,6 +55,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Education />
+      <Activities />
       <Contact />
       <Footer />
     </PageLoader>

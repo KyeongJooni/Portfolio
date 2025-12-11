@@ -16,7 +16,7 @@ export const logoStyles = css({
   backgroundClip: 'text',
   cursor: 'pointer',
   transition: 'transform {durations.fast}',
-  zIndex: 1001,
+  zIndex: 9998,
   color: 'transparent',
   _hover: {
     transform: 'scale(1.02)',
@@ -60,7 +60,7 @@ export const hamburgerStyles = css({
   flexDirection: 'column',
   gap: '4px',
   cursor: 'pointer',
-  zIndex: 1001,
+  zIndex: 9998,
   marginLeft: 'auto',
 });
 
@@ -70,20 +70,24 @@ export const mobileMenuStyles = css({
   left: 0,
   right: 0,
   bottom: 0,
+  width: '100vw',
+  height: '100vh',
   backgroundColor: 'rgba(10, 10, 10, 0.98)',
   backdropFilter: 'blur(10px)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  gap: '2rem',
-  zIndex: 999,
+  gap: { base: '1rem', sm: '1.25rem' },
+  padding: '2rem',
+  overflowY: 'auto',
+  zIndex: 9997,
 });
 
 export const mobileLinkStyles = css({
   color: '{colors.text.primary}',
   textDecoration: 'none',
-  fontSize: '{fontSizes.2xl}',
+  fontSize: { base: '{fontSizes.xl}', sm: '{fontSizes.2xl}' },
   fontWeight: '600',
   transition: 'all {durations.fast}',
   _hover: {
