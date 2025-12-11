@@ -36,7 +36,7 @@ export default function Education() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(
     null,
   );
-  const [ref, inView] = useScrollAnimation();
+  const [ref, inView] = useScrollAnimation({ threshold: 0.2 });
   useBodyScrollLock(!!selectedCertificate);
   useEscapeKey(() => setSelectedCertificate(null), !!selectedCertificate);
 
