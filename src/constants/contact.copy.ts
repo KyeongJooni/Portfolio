@@ -17,7 +17,7 @@ type ContactCopy = {
 export const CONTACT_COPY: ContactCopy = {
   section: {
     title: 'Contact',
-    subtitle: '언제든지 편하게 연락주세요!',
+    subtitle: '',
   },
   motion: {
     delayStep: 0.1,
@@ -30,4 +30,3 @@ export const CONTACT_COPY: ContactCopy = {
   //   heading: "Let's Work Together!",
   // },
 };
-
