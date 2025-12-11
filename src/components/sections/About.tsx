@@ -15,7 +15,7 @@ import { IconCard, SectionTitle } from '@ui/index';
 import { motion } from 'framer-motion';
 
 export default function About() {
-  const [ref, inView] = useScrollAnimation();
+  const [ref, inView] = useScrollAnimation({ threshold: 0.2 });
 
   return (
     <section id="about" className={sectionStyles} ref={ref}>
