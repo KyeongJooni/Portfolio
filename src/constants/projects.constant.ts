@@ -7,8 +7,11 @@ export const projects: Project[] = [
     description: 'RAG 기반 AI Chatbot을 활용한 사내문서 관리 시스템',
     tags: [
       'React',
+      'React Router',
       'TypeScript',
       'Styled-Components',
+      'Recharts',
+      'ApexCharts',
       'React Query',
       'Zustand',
       'React Hook Form',
@@ -69,6 +72,7 @@ export const projects: Project[] = [
     description: 'AI를 이용한 개발자 친화적 블로그 서비스 Alog',
     tags: [
       'React',
+      'React Router',
       'JavaScript',
       'Figma',
       'Framer Motion',

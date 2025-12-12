@@ -13,6 +13,8 @@ import {
   SiThreedotjs,
   SiVercel,
   SiPnpm,
+  SiReactrouter,
+  SiMantine,
   type IconType,
 } from '@icons-pack/react-simple-icons';
 
@@ -36,5 +38,7 @@ export const tagIconMap: Record<string, TagIconEntry> = {
   'Three.js': { Icon: SiThreedotjs, color: '#000000' },
   Vercel: { Icon: SiVercel, color: '#000000' },
   Pnpm: { Icon: SiPnpm, color: '#F69220' },
+  'React Router': { Icon: SiReactrouter, color: '#CA4245' },
+  Mantine: { Icon: SiMantine, color: '#339AF0' },
 };
 
