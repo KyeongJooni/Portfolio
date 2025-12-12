@@ -11,6 +11,8 @@ import {
   SiNextdotjs,
   SiFigma,
   SiThreedotjs,
+  SiVercel,
+  SiPnpm,
   type IconType,
 } from '@icons-pack/react-simple-icons';
 
@@ -32,5 +34,7 @@ export const tagIconMap: Record<string, TagIconEntry> = {
   'Next.js': { Icon: SiNextdotjs, color: '#000000' },
   Figma: { Icon: SiFigma, color: '#F24E1E' },
   'Three.js': { Icon: SiThreedotjs, color: '#000000' },
+  Vercel: { Icon: SiVercel, color: '#000000' },
+  Pnpm: { Icon: SiPnpm, color: '#F69220' },
 };
 
