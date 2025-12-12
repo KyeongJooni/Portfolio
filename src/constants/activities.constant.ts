@@ -20,10 +20,11 @@ export const activities: ActivityGroup[] = [
   },
   {
     title: '오픈소스 기여',
-    link: 'https://github.com/OpenHands/OpenHands/pull/11980',
+    link: 'https://www.notion.so/kyeongjooni/2c700b6571a880499cc2f9ebd1dab781?v=2c700b6571a8802b88e5000ce5421d91',
     items: [
-      '오픈소스 프로젝트의 프론트엔드 테스트 코드의 Zustand 상태 관리 부분 리팩토링 등 기여했습니다.',
-      '대규모 프로젝트의 코드베이스를 이해하고 기여하는 경험을 쌓았습니다.',
+      '오픈소스 프로젝트의 프론트엔드 테스트 코드의 Zustand 상태 관리 부분 리팩토링 등 기여',
+      '대규모 프로젝트의 코드베이스를 이해하고 기여',
+      'PR 제출과 코드 리뷰를 통해 오픈소스 협업 흐름을 경험',
     ],
   },
 ];
