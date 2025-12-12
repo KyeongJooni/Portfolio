@@ -12,6 +12,7 @@ import {
   cardStyles,
   headerStyles,
   periodStyles,
+  linkStyles,
   titleStyles,
   listStyles,
   itemStyles,
@@ -46,6 +47,26 @@ export default function Activities() {
               <div className={headerStyles}>
                 <h3 className={titleStyles}>{activity.title}</h3>
                 {activity.period && <span className={periodStyles}>{activity.period}</span>}
+                {!activity.period && activity.link && (
+                  <a
+                    href={activity.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={linkStyles}
+                  >
+                    링크
+                  </a>
+                )}
+                {activity.period && activity.link && (
+                  <a
+                    href={activity.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={linkStyles}
+                  >
+                    링크
+                  </a>
+                )}
               </div>
               <div className={listStyles}>
                 {activity.items.map((item, i) => (

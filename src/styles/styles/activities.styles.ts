@@ -64,6 +64,26 @@ export const periodStyles = css({
   padding: '0.3rem 0.75rem',
 });
 
+export const linkStyles = css({
+  alignSelf: 'center',
+  fontSize: '{fontSizes.sm}',
+  fontWeight: '700',
+  color: '{colors.brand.blue}',
+  textDecoration: 'none',
+  cursor: 'pointer',
+  padding: '0.2rem 0.4rem',
+  borderRadius: '8px',
+  transition: 'color {durations.normal}, background-color {durations.normal}',
+  _hover: {
+    color: '{colors.brand.purple}',
+    backgroundColor: 'rgba(59, 130, 246, 0.08)',
+  },
+  _focusVisible: {
+    outline: '2px solid {colors.brand.blue}',
+    outlineOffset: '2px',
+  },
+});
+
 export const titleStyles = css({
   fontSize: '{fontSizes.xl}',
   fontWeight: '700',
