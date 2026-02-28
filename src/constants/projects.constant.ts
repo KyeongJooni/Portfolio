@@ -1,6 +1,68 @@
-import { Project } from '@/types/projects';
+﻿import { Project } from '@/types/projects';
 
 export const projects: Project[] = [
+  {
+    image: '/loopit.png',
+    title: 'LOOPIT',
+    description: 'IT 수리 및 중고판매 플랫폼 서비스',
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Swiper',
+      'TanStack Query',
+      'Zustand',
+      'React Hook Form',
+      'Zod',
+      'React Router 7',
+      'WebSocket(STOMP)',
+      'Vite',
+      'Yarn',
+      'Storybook',
+      'Vitest',
+      'Cypress',
+      'GitHub Action',
+      'Vercel',
+    ],
+    links: {
+      demo: 'https://www.loopit.kro.kr/',
+      github: 'https://github.com/Leets-Official/LOOPIT-FE',
+    },
+    teamSize: '8명',
+    period: '2025.12 - 2026.02',
+    contributionRate: '50%',
+    detailedDescription:
+      '중고 물품의 구매·판매부터 수리점 찾기, 실시간 채팅까지 원스톱으로 제공하는 종합 중고거래 플랫폼',
+    features: [
+      'LOOPIT은 중고 스마트 기기에 새로운 쓸모를 찾아줍니다.',
+
+      '실시간 채팅으로 판매자와 직접 소통하고,', 
+
+      'AI 챗봇이 거래를 도와주며, 기기에 문제가 생기면 수리 서비스까지 연결됩니다',
+    ],
+    contributions: [
+      'FSD(app→pages→shared) 적용으로 단방향 의존성과 레이어 책임 분리 아키텍처 설계',
+      'React Compiler(babel-plugin-react-compiler) 적용으로 자동 메모이제이션 최적화',
+      'Public API(index.ts export) 규칙으로 모듈 캡슐화 강화 및 import 경로/규칙 통일',
+      'React 19 + TypeScript 기반 25개+ 공통 UI 컴포넌트(Button/TextField/Card/Modal 등) 구축',
+      'tailwind-variants로 variant/size 조합형 스타일 시스템 구현해 컴포넌트 확장성 확보',
+      '.variants/.types/.stories 분리로 스타일·타입·문서화를 분담해 유지보수 효율 개선',
+      'View Transitions API + React Router 7 연동으로 페이지 전환 애니메이션 UX 구현',
+      'React Router 7 Framework Mode 기반 SSR 라우팅 구조 설계 및 중첩 레이아웃 구성',
+      'Vercel 배포 환경에서 SSR 동작을 구성하고 인증/비인증 라우트 분리 적용',
+      'STOMP 프로토콜 기반 실시간 채팅 구현 및 WebSocket 연동 상태 관리',
+      'Storybook 21 stories 작성 및 접근성 애드온(@storybook/addon-a11y) 적용으로 a11y 검증 자동화',
+      'Vitest + Testing Library 기반 23개 유닛 테스트 작성 및 Cypress E2E 테스트 구축 (cy.intercept API 모킹)',
+      'Claude Code·Cursor 기반 코드 작성/리팩터링·리뷰 보조 자동화로 개발 속도와 PR 품질 검증 효율 개선',
+    ],
+    reflections: [
+      'React Router 7 layout API로 라우팅 구조를 한눈에 관리하며 확장·유지보수가 쉬워짐을 체감했습니다',
+      'FSD를 적용해 레이어 의존성을 명확히 하자 충돌이 줄고 병렬 작업이 자연스러워졌습니다.',
+      '디자인 토큰을 구축하며 색상 변경이 전 서비스에 일관되게 반영되는 경험으로 시스템 설계의 가치를 배웠습니다.',
+      '25+ 컴포넌트를 Storybook으로 문서화하며 문서가 협업 속도를 좌우한다는 점을 확인했습니다.',
+      'Cypress E2E 테스트로 리팩토링·기능 추가에 자신감을 주는 안전장치의 의미를 경험했습니다.',
+    ],
+  },
   {
     image: '/dtalks.png',
     title: 'DTalks',
@@ -12,7 +74,7 @@ export const projects: Project[] = [
       'Styled-Components',
       'Recharts',
       'ApexCharts',
-      'React Query',
+      'TanStack Query',
       'Zustand',
       'React Hook Form',
       'Yup',
@@ -27,7 +89,7 @@ export const projects: Project[] = [
     period: '2025.07 - 2025.08',
     contributionRate: '60%',
     detailedDescription:
-      '사내 문서를 쉽고 효율적으로 활용할 수 있도록 돕는 RAG 기반 챗봇 및 데이터 관리 시스템입니다.',
+      '사내 문서를 쉽고 효율적으로 활용할 수 있도록 돕는 RAG 기반 챗봇 및 데이터 관리 시스템',
     features: [
       'Auth: 이메일 기반 회원가입 및 로그인 기능',
       'AI Chatbot (RAG 기반)',

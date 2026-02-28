@@ -31,9 +31,10 @@ export const skillCategories: SkillCategory[] = [
     title: 'Styling',
     skills: [
       { name: 'CSS3', level: 'Expert' },
-      { name: 'Tailwind', level: 'Advanced' },
+      { name: 'Tailwind CSS', level: 'Advanced' },
       { name: 'Styled Components', level: 'Advanced' },
       { name: 'Panda CSS', level: 'Intermediate' },
+      { name: 'Vanilla Extract', level: 'Beginner' },
       { name: 'Framer Motion', level: 'Intermediate' },
       { name: 'ReCharts', level: 'Intermediate' },
       { name: 'ApexCharts', level: 'Intermediate' },
@@ -85,4 +86,3 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
 ];
-

@@ -5,31 +5,20 @@ import { css } from '@/styled-system/css';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
   const { isLoaded } = useLoader();
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = (resolvedTheme ?? 'dark') === 'dark';
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme) {
-      const dark = savedTheme === 'dark';
-      setIsDark(dark);
-      document.documentElement.classList.toggle('light', !dark);
-    } else {
-      setIsDark(true);
-      document.documentElement.classList.remove('light');
-    }
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    document.documentElement.classList.toggle('light', !newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+    setTheme(isDark ? 'light' : 'dark');
   };
 
   const buttonStyles = css({

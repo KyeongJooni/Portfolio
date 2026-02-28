@@ -2,11 +2,20 @@ import { ActivityGroup } from '@/types/activities';
 
 export const activities: ActivityGroup[] = [
   {
+    title: 'KUSITMS 33기',
+    period: '2026.02 - ing',
+    items: [
+      '한국대학생 IT 경영학회 큐시즘(KUSITMS) 33기 Frontend 파트',
+      '큐시즘 웹 메이커스 Frontend 개발 파트원',
+    ],
+  },
+  {
     title: 'Leets 6기',
-    period: '2025.09 - ing',
+    period: '2025.09 - 2026.02',
     items: [
       '가천대학교 IT 학술동아리 Leets 6기 Frontend 파트',
-      '개발 역량 증진을 위한 개인 과제 프로젝트 참여',
+      '개발 역량 증진을 위한 개인 과제 프로젝트 개발',
+      'IT 수리 및 중고판매 플랫폼 서비스 “LOOPIT” 프론트엔드 파트장',
     ],
   },
   {

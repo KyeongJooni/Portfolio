@@ -10,9 +10,10 @@ export const skillIconMap: Record<string, SkillIconEntry> = {
   TypeScript: { icon: 'simple-icons:typescript', color: '#3178C6' },
   JavaScript: { icon: 'simple-icons:javascript', color: '#F7DF1E' },
   CSS3: { icon: 'simple-icons:css3', color: '#1572B6' },
-  Tailwind: { icon: 'simple-icons:tailwindcss', color: '#38BDF8' },
+  'Tailwind CSS': { icon: 'simple-icons:tailwindcss', color: '#38BDF8' },
   'Styled Components': { icon: 'simple-icons:styledcomponents', color: '#DB7093' },
   'Panda CSS': { icon: 'emojione:panda-face' },
+  'Vanilla Extract': { icon: 'simple-icons:vanillaextract', color: '#F786AD' },
   'Node.js': { icon: 'simple-icons:nodedotjs', color: '#339933' },
   Express: { icon: 'simple-icons:express', color: '#000000' },
   MongoDB: { icon: 'simple-icons:mongodb', color: '#47A248' },
@@ -59,4 +60,3 @@ export const skillIconMap: Record<string, SkillIconEntry> = {
   Jira: { icon: 'simple-icons:jira', color: '#2684FF' },
   Notion: { icon: 'simple-icons:notion', color: '#000000' },
 };
-
