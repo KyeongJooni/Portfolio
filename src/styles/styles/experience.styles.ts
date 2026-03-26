@@ -6,7 +6,6 @@ export const sectionStyles = css({
   flexDirection: 'column',
   justifyContent: 'center',
   padding: '6rem 0',
-  backgroundColor: '{colors.background.secondary}',
 });
 
 export const containerStyles = css({
