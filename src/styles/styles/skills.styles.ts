@@ -21,7 +21,7 @@ export const skillCategoriesStyles = css({
   flexDirection: 'column',
   gap: '1.5rem',
   marginTop: '2rem',
-  minHeight: '280px',
+  minHeight: '480px',
 });
 
 export const categoryStyles = css({

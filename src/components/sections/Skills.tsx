@@ -29,7 +29,7 @@ import { Icon } from '@iconify/react';
 import { skillIconMap } from '@/utils/skill-icons';
 
 export default function Skills() {
-  const [ref, inView] = useScrollAnimation({ threshold: 0.5 });
+  const [ref, inView] = useScrollAnimation({ threshold: 0.3 });
   const [activeCategory, setActiveCategory] =
     useState<(typeof SKILLS_COPY.categories)[number]>(SKILLS_COPY.categories[0]);
 
@@ -49,14 +49,21 @@ export default function Skills() {
 
   return (
     <section id="skills" className={sectionStyles} ref={ref}>
-      <div className={cx('section-container', containerStyles)}>
-        <SectionTitle
-            title={SKILLS_COPY.section.title}
-            subtitle={SKILLS_COPY.section.subtitle}
-          align="center"
-        />
+      <motion.div
+        className={cx('section-container', containerStyles)}
+        variants={skillsContainerVariants}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+      >
+        <motion.div variants={skillCategoryVariants}>
+          <SectionTitle
+              title={SKILLS_COPY.section.title}
+              subtitle={SKILLS_COPY.section.subtitle}
+            align="center"
+          />
+        </motion.div>
 
-          <div className={tabsWrapperStyles}>
+          <motion.div className={tabsWrapperStyles} variants={skillCategoryVariants}>
             {SKILLS_COPY.categories.map(category => (
               <button
                 key={category}
@@ -67,9 +74,9 @@ export default function Skills() {
                 {category}
               </button>
             ))}
-          </div>
+          </motion.div>
 
-        <div className={skillCategoriesStyles}>
+        <motion.div className={skillCategoriesStyles} variants={skillCategoryVariants}>
           <AnimatePresence mode="wait">
             {skillCategories
               .filter(category => category.title === activeCategory)
@@ -77,10 +84,10 @@ export default function Skills() {
               <motion.div
                 key={category.title}
                 className={categoryStyles}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 <h3 className={categoryTitleStyles}>{category.title}</h3>
                 <div className={skillsGridStyles}>
@@ -90,7 +97,7 @@ export default function Skills() {
                       className={skillCardStyles}
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.2 }}
+                      transition={{ duration: 0.25, delay: skillIndex * 0.03 }}
                       whileHover={{ scale: 1.05 }}
                     >
                       <span className={skillIconStyles}>
@@ -124,8 +131,8 @@ export default function Skills() {
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
