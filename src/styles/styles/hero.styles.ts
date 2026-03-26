@@ -58,7 +58,7 @@ export const titleStyles = css({
     md: '{fontSizes.4xl}',
     lg: '{fontSizes.5xl}',
   },
-  fontWeight: '800',
+  fontWeight: '700',
   lineHeight: '1.3',
   marginBottom: '3rem',
   wordBreak: 'keep-all',
