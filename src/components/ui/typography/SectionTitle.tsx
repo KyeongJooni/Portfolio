@@ -23,7 +23,7 @@ export default function SectionTitle({
   });
 
   const titleStyles = css({
-    fontSize: { base: '{fontSizes.4xl}', md: '{fontSizes.5xl}', lg: '{fontSizes.6xl}' },
+    fontSize: '{fontSizes.6xl}',
     lineHeight: '1.2',
   });
 
