@@ -11,7 +11,7 @@ export const containerStyles = css({
 
 export const logoStyles = css({
   fontSize: '{fontSizes.2xl}',
-  fontWeight: '700',
+  fontWeight: '800',
   background: 'linear-gradient(135deg, {colors.brand.blue}, {colors.brand.purple})',
   backgroundClip: 'text',
   cursor: 'pointer',

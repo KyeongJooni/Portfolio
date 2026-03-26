@@ -4,7 +4,7 @@ import { css } from '@/styled-system/css';
 export const footerStyles = css({
   backgroundColor: '{colors.background.secondary}',
   borderTop: '1px solid {colors.border.primary}',
-  padding: '1.25rem 0.75rem',
+  padding: '1.25rem 2rem',
 });
 
 // Container

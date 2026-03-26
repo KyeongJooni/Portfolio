@@ -26,7 +26,6 @@ export const cardRecipe = defineRecipe({
     },
     hoverable: {
       true: {
-        cursor: 'pointer',
         _hover: {
           transform: 'translateY(-4px)',
           boxShadow: '0 12px 24px rgba(0, 0, 0, 0.3)',
