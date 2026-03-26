@@ -94,7 +94,7 @@ export default defineConfig({
 
         fonts: {
           pretendard: {
-            value: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+            value: '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
           },
           geist: { value: 'var(--font-geist-sans), sans-serif' },
           mono: { value: 'var(--font-geist-mono), ui-monospace, monospace' },

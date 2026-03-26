@@ -1,15 +1,7 @@
 @layer reset, base, tokens, recipes, utilities;
 
-/* 폰트 */
-@import '@fontsource/pretendard';
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
-
-/* CSS 변수 설정 */
-:root {
-  --font-geist-sans: 'Geist', sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
-}
+/* Pretendard: CDN에서 로드 (layout.tsx <link>)
+   Geist Sans / Mono: next/font (layout.tsx import) */
 
 /* Panda CSS preflight가 리셋을 처리하므로 제거됨 */
 
