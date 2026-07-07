@@ -29,7 +29,7 @@ export const activities: ActivityGroup[] = [
   },
   {
     title: '오픈소스 기여',
-    link: 'https://kyeongjooni.notion.site/2c700b6571a880499cc2f9ebd1dab781?v=2c700b6571a8802b88e5000ce5421d91&pvs=74',
+    link: 'https://kyeongjooni.notion.site/9df00b6571a8837ca9b681a23ace6dbe?v=39b00b6571a882e29011089407b3825f&source=copy_link',
     items: [
       '오픈소스 프로젝트의 프론트엔드 테스트 코드의 Zustand 상태 관리 부분 리팩토링 등 기여',
       '대규모 프로젝트의 코드베이스를 이해하고 기여',
